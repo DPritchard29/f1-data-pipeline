@@ -2,3 +2,7 @@ fastf1
 pandas
 sqlalchemy
 jupyter
+dbt-core
+dbt-sqlite
+streamlit
+plotly

@@ -1,0 +1,167 @@
+models:
+  - name: raw_circuits
+    description: "Raw ingested circuit data"
+    columns:
+      - name: circuitId
+        description: "The unique id of the circuit"
+        data_tests:
+          - unique
+          - not_null
+      - name: circuitUrl
+        description: "A link to the circuit"
+        data_tests:
+          - unique
+          - not_null
+      - name: circuitName
+        description: "The name of the circuit"
+        data_tests:
+          - not_null
+      - name: lat
+        description: "The location latitude"
+        data_tests:
+          - not_null
+      - name: long
+        description: "The location longitude"
+        data_tests:
+          - not_null
+      - name: locality
+        description: "The circuit location"
+        data_tests:
+          - not_null
+
+  - name: raw_constructor_standings
+    description: "Raw ingested constructor standings data"
+    columns:
+      - name: position
+        description: "The position of the driver / constructor"
+      - name: points
+        description: "The total number of points"
+      - name: constructorId
+        description: "The unique id of the constructor"
+        data_tests:
+          - not_null
+      - name: season
+        description: "The season number (year)"
+        data_tests:
+          - not_null
+      - name: round
+        description: "The round (race) number"
+        data_tests:
+          - not_null
+
+  - name: raw_constructors
+    description: "Raw ingested constructor data"
+    columns:
+      - name: constructorId
+        description: "The unique id of the constructor"
+        data_tests:
+          - unique
+          - not_null
+      - name: constructorUrl
+        description: "A link to the constructor"
+        data_tests:
+          - unique
+          - not_null
+      - name: constructorName
+        description: "The name of the constructor"
+        data_tests:
+          - unique
+          - not_null
+      - name: constructorNationality
+        description: "The nationality of the constructor"
+        data_tests:
+          - not_null
+
+  - name: raw_driver_standings
+    description: "Raw ingested driver standings data"
+    columns:
+      - name: position
+        description: "The position of the driver / constructor"
+      - name: points
+        description: "The total number of points"
+      - name: driverId
+        description: "The unique id of the driver"
+        data_tests:
+          - not_null
+      - name: season
+        description: "The season number (year)"
+        data_tests:
+          - not_null
+      - name: round
+        description: "The round (race) number"
+        data_tests:
+          - not_null
+
+  - name: raw_driver_teams
+    description: "Raw ingested mapping of driver team data"
+    columns:
+      - name: driverId
+        description: "The unique id of the driver"
+        data_tests:
+          - unique
+          - not_null
+      - name: constructorIds
+        description: "The unique id of the constructor"
+        data_tests:
+          - not_null
+
+  - name: raw_drivers
+    description: "Raw ingested driver data"
+    columns:
+      - name: driverId
+        description: "The unique id of the driver"
+        data_tests:
+          - unique
+          - not_null
+      - name: driverNumber
+        description: "The number of the driver"
+        data_tests:
+          - not_null
+      - name: driverCode
+        description: "The 3-letter code of the driver"
+        data_tests:
+          - not_null
+      - name: driverUrl
+        description: "A link to the driver"
+        data_tests:
+          - unique
+          - not_null
+      - name: givenName
+        description: "The driver first name"
+        data_tests:
+          - not_null
+      - name: familyName
+        description: "The driver last name"
+        data_tests:
+          - not_null
+      - name: dateOfBirth
+        description: "The birth date of the driver"
+        data_tests:
+          - not_null
+      - name: driverNationality
+        description: "The nationality of the driver"
+        data_tests:
+          - not_null
+
+  - name: raw_race_schedule
+    description: "Raw ingested race schedule data"
+    columns:
+      - name: season
+        description: "The season number (year)"
+        data_tests:
+          - not_null
+      - name: round
+        description: "The round (race) number"
+        data_tests:
+          - unique
+          - not_null
+      - name: raceDate
+        description: "The date of the race"
+        data_tests:
+          - unique
+          - not_null
+      - name: circuitId
+        description: "The unique id of the circuit"
+        data_tests:
+          - unique
+          - not_null

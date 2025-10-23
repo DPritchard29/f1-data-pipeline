@@ -1,0 +1,11 @@
+f1_dbt_project:
+  target: dev
+  outputs:
+    dev:
+      type: sqlite
+      threads: 1
+      database: f1
+      schema: main
+      schemas_and_paths:
+        main: ../db/f1.db
+      schema_directory: '/my_project/data'

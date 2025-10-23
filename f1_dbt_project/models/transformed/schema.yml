@@ -1,0 +1,145 @@
+models:
+  - name: constructor_rankings_over_time
+    description: "The transformed constructor rankings by round"
+    columns:
+      - name: season
+        description: "The season number (year)"
+        data_tests:
+          - not_null
+      - name: round
+        description: "The round (race) number"
+        data_tests:
+          - not_null
+      - name: rank
+        description: "The rank by points"
+        data_tests:
+          - not_null
+      - name: points
+        description: "The total number of points"
+        data_tests:
+          - not_null
+      - name: name
+        description: "The constructor name"
+        data_tests:
+          - not_null
+      - name: colour
+        description: "The hex colour of the constructor"
+        data_tests:
+          - not_null
+  - name: driver_rankings_over_time
+    description: "The transformed driver rankings by round"
+    columns:
+      - name: season
+        description: "The season number (year)"
+        data_tests:
+          - not_null
+      - name: round
+        description: "The round (race) number"
+        data_tests:
+          - not_null
+      - name: rank
+        description: "The rank by points"
+        data_tests:
+          - not_null
+      - name: points
+        description: "The total number of points"
+        data_tests:
+          - not_null
+      - name: name
+        description: "The driver name"
+        data_tests:
+          - not_null
+      - name: colour
+        description: "The hex colour of the constructor"
+        data_tests:
+          - not_null
+
+  - name: driver_info
+    description: "Driver informaton at the latest round number"
+    columns:
+      - name: driverName
+        description: "The driver full name"
+        data_tests:
+          - not_null
+      - name: driverNumber
+        description: "The number of the driver"
+        data_tests:
+          - not_null
+      - name: driverCode
+        description: "The 3-letter code of the driver"
+        data_tests:
+          - not_null
+      - name: driverUrl
+        description: "A link to the driver"
+        data_tests:
+          - unique
+          - not_null
+      - name: dob
+        description: "The birth date of the driver"
+        data_tests:
+          - not_null
+      - name: driverNationality
+        description: "The nationality of the driver"
+        data_tests:
+          - not_null
+      - name: constructorName
+        description: "The constructor name"
+        data_tests:
+          - not_null
+      - name: colour
+        description: "The hex colour of the constructor"
+        data_tests:
+          - not_null
+
+  - name: driver_team_colours
+    description: "Mapping between driver, constructor and constructor hex colour"
+    columns:
+      - name: driverId
+        description: "The unique id of the driver"
+        data_tests:
+          - unique
+          - not_null
+      - name: constructorId
+        description: "The unique id of the constructor"
+        data_tests:
+          - not_null
+      - name: colour
+        description: "The hex colour of the constructor"
+        data_tests:
+          - not_null
+
+  - name: race_dates
+    description: "The dates of the races"
+    columns:
+      - name: race_date
+        description: "The date of the race"
+        data_tests:
+          - unique
+          - not_null
+
+
+  - name: race_info
+    description: "Information relating to each race"
+    columns:
+      - name: season
+        description: "The season number (year)"
+        data_tests:
+          - not_null
+      - name: round
+        description: "The round (race) number"
+        data_tests:
+          - not_null
+      - name: raceDate
+        description: "The date of the race"
+        data_tests:
+          - unique
+          - not_null
+      - name: circuitName
+        description: "The name of the circuit"
+        data_tests:
+          - not_null
+      - name: circuitUrl
+        description: "A link to the circuit"
+        data_tests:
+          - unique
+          - not_null
