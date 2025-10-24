@@ -126,13 +126,13 @@ def show_driver_info():
 
     df = df_driver[df_driver['driverName']==driver]
 
-    name = df['driverName'][0]
-    team = df['constructorName'][0]
-    code = df['driverCode'][0]
-    dob = df['dob'][0]
-    number = df['driverNumber'][0]
-    nationality = df['driverNationality'][0]
-    url = df['driverUrl'][0]
+    name = df['driverName'].tolist()[0]
+    team = df['constructorName'].tolist()[0]
+    code = df['driverCode'].tolist()[0]
+    dob = df['dob'].tolist()[0]
+    number = df['driverNumber'].tolist()[0]
+    nationality = df['driverNationality'].tolist()[0]
+    url = df['driverUrl'].tolist()[0]
 
     with st.container(border=True):
         col1, col2 = st.columns(2)

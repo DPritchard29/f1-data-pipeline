@@ -43,7 +43,7 @@ The pipeline consists of three main layers:
 | **Transformation** | dbt |
 | **Automation** | GitHub Actions |
 | **Visualization** | Streamlit |
-| **Testing** | dbt tests + act (local GitHub Actions runner) |
+| **Testing** | dbt tests + act (local GitHub Actions runner through Docker) |
 
 ---
 
@@ -74,8 +74,6 @@ You can trigger it manually or let it run weekly via the included `update_data.y
 
 ## 🧩 Next Steps
 
-| Category | Tool |
-|-----------|------|
 - **Streamline Ingestion Process:** Incremental ingests
 - **Increased Accessibility:** introduce Docker in the repository to allow users to build dashboard loaclly
 - **Historical Data:** Add visualisations on data from before the 2025 season

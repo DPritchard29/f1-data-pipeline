@@ -1,6 +1,11 @@
 import streamlit as st
+from pathlib import Path
 
 st.set_page_config(page_title="Project Overview", page_icon="🏎️", layout="wide")
+
+# Get repo root
+base_path = Path(__file__).parent.parent
+assets_dir = base_path / "assets"
 
 st.title("🏎️ Formula 1 Data Pipeline — Overview")
 st.markdown("---")
@@ -26,14 +31,14 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.image(
-        "../assets/pipeline_architecture.png"
+        str(assets_dir / "pipeline_architecture.png")
         , caption="Pipeline Architecture (Ingest → Transform → Visualize)"
         , use_container_width=True
 )
 
 with col2:
     st.image(
-        "../assets/dbt_lineage.png"
+        str(assets_dir / "dbt_lineage.png")
         , caption="DBT Data Lineage"
         , use_container_width=True
 )
@@ -52,7 +57,7 @@ with col2:
 
 with col3:
     st.metric("Visualization", "Streamlit")
-    st.metric("Testing", "dbt Tests + act")
+    st.metric("Testing", "dbt Tests + act (Docker)")
 
 st.subheader("Next Steps")
 st.markdown("""
