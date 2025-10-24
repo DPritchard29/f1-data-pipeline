@@ -6,6 +6,9 @@ on:
   schedule:
     - cron: "0 6 * * 1" 
 
+permissions:
+  contents: write  # <-- REQUIRED for pushing commits
+
 jobs:
   update-data:
     runs-on: ubuntu-latest
