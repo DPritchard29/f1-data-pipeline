@@ -1,0 +1,30 @@
+# Triggers empty commit to avoid Streamlit app becoming dormant
+name: Empty Commit (Keep Streamlit Alive)
+
+on:
+  # Manual trigger and schedule every 6 hours
+  workflow_dispatch: 
+  schedule:
+    - cron: "0 */6 * * *"
+
+permissions:
+  contents: write 
+
+jobs:
+  keep-alive:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false 
+
+      - name: Create empty commit
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git commit --allow-empty -m "🕒 Keep-alive commit (Streamlit Cloud)"
+          git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
