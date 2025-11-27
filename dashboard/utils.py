@@ -12,19 +12,24 @@ def create_race_info():
     dates = [datetime.strptime(d, "%Y-%m-%d").date() for d in dates]
 
     today = date.today()
-    last_race_date = max([d for d in dates if d < today])
-    next_race_date = min([d for d in dates if d >= today])
 
     col1, col2 = st.columns(2)
     with col1:
-        container = st.container(border=True)
+        container = st.container(border=True, height=260)
         container.subheader('Last Race Info:')
-        pull_race_data(container, last_race_date)
+        try:
+            last_race_date = max([d for d in dates if d < today])
+            pull_race_data(container, last_race_date)
+        except:
+            container.write('Start of Season')
     with col2:
-        container = st.container(border=True)
+        container = st.container(border=True, height=260)
         container.subheader('Next Race Info:')
-        pull_race_data(container, next_race_date)
-
+        try:
+            next_race_date = min([d for d in dates if d >= today])
+            pull_race_data(container, next_race_date)
+        except:
+            container.write('End of Season')
     return
 
 def pull_race_data(container, race_date):
