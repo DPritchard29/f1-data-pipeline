@@ -59,16 +59,48 @@ You can trigger it manually or let it run weekly via the included `update_data.y
 ---
 
 ## 🔧 Local Setup
-1. Use the following commands to be able to set up the dashboard locally:
+
+Mac users:
    ```bash
+   # Create and activate local environment
+   python -m venv .venv
+   source .venv/bin/activate
+
+   # Install requirements
+   pip install -r requirements.txt
+
+   # Run data ingestion script
+   python src/ingest.py
+
+   # Run DBT flow
+   cd f1_dbt_project
+   dbt build
+   cd ..
+
+   # Run Streamlit dashboard
+   streamlit run dashboard/app.py
+   ```
+
+  Windows users:
+   ```bash
+   # Create and activate local environment
    python -m venv .venv
    .venv\Scripts\activate
+
+   # Install requirements
    pip install -r requirements.txt
+
+   # Run data ingestion script
    python .\src\ingest.py
+
+   # Run DBT flow
    cd .\f1_dbt_project\ 
    dbt build
    cd ..
+
+   # Run Streamlit dashboard
    streamlit run dashboard/app.py
+   ```
 
 ---
 
