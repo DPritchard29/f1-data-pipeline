@@ -7,7 +7,7 @@ import time
 engine = get_engine()
 ergast = Ergast()
 
-season = 2025
+season = 2026
 
 print('running ingest')
 

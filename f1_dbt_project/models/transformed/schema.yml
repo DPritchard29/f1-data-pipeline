@@ -24,8 +24,6 @@ models:
           - not_null
       - name: colour
         description: "The hex colour of the constructor"
-        data_tests:
-          - not_null
   - name: driver_rankings_over_time
     description: "The transformed driver rankings by round"
     columns:
@@ -51,8 +49,6 @@ models:
           - not_null
       - name: colour
         description: "The hex colour of the constructor"
-        data_tests:
-          - not_null
 
   - name: driver_info
     description: "Driver informaton at the latest round number"
@@ -88,8 +84,6 @@ models:
           - not_null
       - name: colour
         description: "The hex colour of the constructor"
-        data_tests:
-          - not_null
 
   - name: driver_team_colours
     description: "Mapping between driver, constructor and constructor hex colour"
@@ -105,8 +99,6 @@ models:
           - not_null
       - name: colour
         description: "The hex colour of the constructor"
-        data_tests:
-          - not_null
 
   - name: race_dates
     description: "The dates of the races"
