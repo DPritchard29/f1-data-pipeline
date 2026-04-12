@@ -1,13 +1,13 @@
 from db import get_engine
 from fastf1.ergast import Ergast
 import pandas as pd
-from datetime import date
+from datetime import datetime, date
 import time
 
 engine = get_engine()
 ergast = Ergast()
 
-season = 2026
+season = str(datetime.now().year)
 
 print('running ingest')
 

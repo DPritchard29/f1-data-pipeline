@@ -1,5 +1,8 @@
 # 🏎️ Formula 1 Data Pipeline
 
+Link: https://f1-data-pipeline.streamlit.app/
+Dashboard [here](https://f1-data-pipeline.streamlit.app/)
+
 An **end-to-end automated Formula 1 data pipeline** that ingests, transforms, and visualizes race and driver data from the Ergast and FastF1 APIs — built for speed, reliability, and automation.
 
 ---

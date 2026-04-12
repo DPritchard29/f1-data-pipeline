@@ -1,7 +1,10 @@
 import streamlit as st
 from pathlib import Path
+import datetime
 
 st.set_page_config(page_title="Project Overview", page_icon="🏎️", layout="wide")
+
+current_year = str(datetime.datetime.now().year)
 
 # Get repo root
 base_path = Path(__file__).parent.parent
@@ -12,9 +15,9 @@ st.markdown("---")
 
 # --- Project Summary
 st.subheader("📘 Project Summary")
-st.write("""
+st.write(f"""
 This project is an **end-to-end automated data pipeline** for Formula 1 analytics.  
-It fetches, transforms, and visualizes 2026 Formula 1 race and driver data using modern data engineering tools.
+It fetches, transforms, and visualizes {current_year} Formula 1 race and driver data using modern data engineering tools.
 """)
 
 st.markdown("""
@@ -60,10 +63,10 @@ with col3:
     st.metric("Testing", "dbt Tests + act (Docker)")
 
 st.subheader("Next Steps")
-st.markdown("""
+st.markdown(f"""
 - **Streamline Ingestion Process:** Incremental ingests
 - **Increased Accessibility:** introduce Docker in the repository to allow users to build dashboard loaclly
-- **Historical Data:** Add visualisations on data from before the 2026 season
+- **Historical Data:** Add visualisations on data from before the {current_year} season
 """)
 
 st.markdown("---")
