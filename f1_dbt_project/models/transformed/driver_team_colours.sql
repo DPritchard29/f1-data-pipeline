@@ -3,7 +3,11 @@
 WITH team_colours AS (
     SELECT 'alpine' AS team_name, '#00A1E8' AS hexColour
     UNION ALL
+    SELECT 'audi', '#F50537'
+    UNION ALL
     SELECT 'aston_martin', '#229971'
+    UNION ALL
+    SELECT 'cadillac', '#ffffff'
     UNION ALL
     SELECT 'ferrari', '#ED1131'
     UNION ALL
@@ -16,8 +20,6 @@ WITH team_colours AS (
     SELECT 'rb', '#4781D7'
     UNION ALL
     SELECT 'red_bull', '#4781D7'
-    UNION ALL
-    SELECT 'sauber', '#01C00E'
     UNION ALL
     SELECT 'williams', '#1868DB'
 )
