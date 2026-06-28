@@ -106,6 +106,12 @@ Mac users:
 
 ---
 
+## 🔄 Recent Changes
+
+- **2026-06-28 Streamlit caching:** Added `@st.cache_data` to dashboard data pull functions to cache repeated database readings In preparation for upscaling data volumes. This reduces repeated local query times by ~84–94% for those calls and improves dashboard responsiveness.
+
+---
+
 ## 🧩 Next Steps
 
 - **Streamline Ingestion Process:** Incremental ingests
