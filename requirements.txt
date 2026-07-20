@@ -2,7 +2,7 @@ fastf1
 pandas
 sqlalchemy
 jupyter
-dbt-core
-dbt-sqlite
+dbt-core==1.11.11
+dbt-sqlite==1.10.0
 streamlit
 plotly
